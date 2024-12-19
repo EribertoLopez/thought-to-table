@@ -3,271 +3,271 @@
   "scaled_recipe": {
     "scaled_ingredients": [
       {
-        "name": "Great Value Sliced Bacon",
+        "name": "Bacon slices, cut into \u00bc\" pieces",
         "amount": 10.5,
         "unit": "oz",
         "category": "meat",
-        "notes": "cut into \u00bc\" pieces"
+        "notes": "Approximately 10.5 slices"
       },
       {
-        "name": "fresh garlic bulb",
+        "name": "Garlic cloves, finely grated",
         "amount": 5.25,
         "unit": "count",
         "category": "produce",
-        "notes": "finely grated cloves"
+        "notes": ""
       },
       {
-        "name": "Great Value Heavy Whipping Cream",
-        "amount": 42,
-        "unit": "fl oz",
+        "name": "Heavy cream",
+        "amount": 2.625,
+        "unit": "cups",
         "category": "dairy",
         "notes": ""
       },
       {
-        "name": "Morton Kosher Salt",
-        "amount": 0.88,
-        "unit": "Tbsp",
+        "name": "Kosher salt",
+        "amount": "1 Tbsp. plus 1.75 tsp.",
+        "unit": "",
         "category": "pantry",
-        "notes": "plus 2 tsp if using Diamond Crystal adjust as per recipe"
+        "notes": "Diamond Crystal or Morton brand preferred"
       },
       {
-        "name": "McCormick Ground Black Pepper",
+        "name": "Freshly ground pepper",
         "amount": 1.75,
-        "unit": "tsp",
+        "unit": "tsp.",
         "category": "spices",
-        "notes": "freshly ground"
+        "notes": ""
       },
       {
-        "name": "russet potatoes",
-        "amount": 43.75,
+        "name": "Russet potatoes",
+        "amount": 4.375,
         "unit": "lb",
         "category": "produce",
-        "notes": "about 8.75 large, peeled and sliced"
+        "notes": "About 8.75 large potatoes"
       },
       {
-        "name": "Great Value Sharp Yellow Cheddar Cheese",
-        "amount": 2.63,
+        "name": "Sharp yellow cheddar cheese, coarsely grated",
+        "amount": 2.625,
         "unit": "oz",
         "category": "dairy",
-        "notes": "coarsely grated, about 0.88 cup"
+        "notes": "About 0.875 cup"
       },
       {
-        "name": "Great Value All Natural Sour Cream",
-        "amount": 4.65,
-        "unit": "oz",
+        "name": "Sour cream",
+        "amount": 0.289,
+        "unit": "cup",
         "category": "dairy",
-        "notes": "\u2153 cup"
+        "notes": ""
       },
       {
-        "name": "fresh scallions",
+        "name": "Scallions, dark green parts only, thinly sliced on a diagonal",
         "amount": 3.5,
         "unit": "count",
         "category": "produce",
-        "notes": "dark green parts only, thinly sliced on a diagonal"
+        "notes": ""
       }
     ],
     "shopping_list": [
       {
-        "name": "Great Value Sliced Bacon",
+        "name": "Bacon",
         "amount": 16,
-        "units": "oz",
-        "notes": "purchase in 16 oz packages"
+        "unit": "oz",
+        "notes": "Packaged in 16 oz for practicality, use as needed"
       },
       {
-        "name": "fresh garlic bulb",
-        "amount": 6,
-        "units": "count",
-        "notes": "sold by the bulb, buy in bulk for savings"
+        "name": "Garlic cloves",
+        "amount": 10,
+        "unit": "count",
+        "notes": "Commonly sold by the bulb, approximate need"
       },
       {
-        "name": "Great Value Heavy Whipping Cream",
-        "amount": 64,
-        "units": "fl oz",
-        "notes": "larger containers may offer better value"
+        "name": "Heavy cream",
+        "amount": 3,
+        "unit": "cups",
+        "notes": "Sold by the pint (2 cups per pint), buy 2 pints"
       },
       {
-        "name": "Morton Kosher Salt",
+        "name": "Kosher salt",
         "amount": 1,
-        "units": "lb",
-        "notes": "larger quantities are more cost-effective"
+        "unit": "box",
+        "notes": "Diamond Crystal or Morton brand preferred"
       },
       {
-        "name": "McCormick Ground Black Pepper",
+        "name": "Freshly ground pepper",
         "amount": 1,
-        "units": "jar",
-        "notes": "purchase a standard sized bottle"
+        "unit": "bottle",
+        "notes": ""
       },
       {
-        "name": "russet potatoes",
-        "amount": 45,
-        "units": "lb",
-        "notes": "sold by weight, consider buying a bag for savings"
+        "name": "Russet potatoes",
+        "amount": 10,
+        "unit": "lb",
+        "notes": "Bags commonly sold in 10 lb amounts"
       },
       {
-        "name": "Great Value Sharp Yellow Cheddar Cheese",
-        "amount": 4,
-        "units": "oz",
-        "notes": "packaged in various sizes, buy as close to required amount"
-      },
-      {
-        "name": "Great Value All Natural Sour Cream",
+        "name": "Sharp yellow cheddar cheese",
         "amount": 8,
-        "units": "oz",
-        "notes": "available in various sizes, choose larger for savings"
+        "unit": "oz",
+        "notes": "Pre-packaged in 8 oz blocks, buy as needed"
       },
       {
-        "name": "fresh scallions",
-        "amount": 4,
-        "units": "count",
-        "notes": "often sold in bunches, purchase one bunch"
+        "name": "Sour cream",
+        "amount": 1,
+        "unit": "cup",
+        "notes": "Sold in various container sizes, buy the smallest available"
+      },
+      {
+        "name": "Scallions",
+        "amount": 1,
+        "unit": "bunch",
+        "notes": "Commonly sold by the bunch"
       }
     ],
     "storage_tips": {
-      "bacon": "Store in freezer if not using immediately.",
-      "garlic": "Keep in a cool, dry place.",
-      "heavy whipping cream": "Refrigerate and use by expiration date.",
-      "salt": "Store in a cool, dry place.",
-      "black pepper": "Store in a cool, dry place.",
-      "potatoes": "Store in a cool, dark place away from onions.",
-      "cheddar cheese": "Refrigerate and use within 2 weeks or freeze.",
-      "sour cream": "Refrigerate and use within 2 weeks.",
-      "scallions": "Refrigerate in a plastic bag and use within a week."
+      "Bacon": "Freeze any unused portions. Defrost in the refrigerator before use.",
+      "Garlic": "Store in a cool, dry place. Can last up to a month.",
+      "Heavy cream": "Refrigerate and use by the date on the package.",
+      "Kosher salt": "Keep in a cool, dry place. Lasts indefinitely.",
+      "Pepper": "Store in a cool, dry place. Grinder or ground pepper lasts up to 3 years.",
+      "Russet potatoes": "Store in a cool, dark, and well-ventilated place. Use within a few weeks.",
+      "Sharp yellow cheddar cheese": "Keep refrigerated. If purchased as a block, wrap leftover cheese tightly in plastic wrap.",
+      "Sour cream": "Refrigerate and use by the expiration date.",
+      "Scallions": "Refrigerate in a plastic bag. Use within a week."
     },
-    "estimated_cost": 75
+    "estimated_cost": 45
   },
   "walmart_products": [
     {
       "ingredient": {
-        "name": "Great Value Sliced Bacon",
+        "name": "Bacon slices, cut into \u00bc\" pieces",
         "amount": 10.5,
         "unit": "oz",
         "category": "meat",
-        "notes": "cut into \u00bc\" pieces"
+        "notes": "Approximately 10.5 slices"
       },
       "product": {
         "name": "$",
-        "url": "https://www.walmart.com/ip/Great-Value-Sliced-Hickory-Smoked-Original-Bacon-16-oz/1526212837?classType=REGULAR&from=/search",
-        "price": "$574\ncurrent price $5.74\n$5.74/lb",
+        "url": "https://www.walmart.com/ip/Wright-Brand-Thick-Sliced-Applewood-Smoked-Bacon-24-oz/3555156962?classType=REGULAR&from=/search",
+        "price": "$998\ncurrent price $9.98\n$6.65/lb",
         "quantity_needed": "10.5 oz"
       }
     },
     {
       "ingredient": {
-        "name": "fresh garlic bulb",
+        "name": "Garlic cloves, finely grated",
         "amount": 5.25,
         "unit": "count",
         "category": "produce",
-        "notes": "finely grated cloves"
+        "notes": ""
       },
       "product": {
         "name": "$",
         "url": "URL not found",
-        "price": "$1455\ncurrent price $14.55",
+        "price": "$1499\ncurrent price $14.99\n$1.43/oz",
         "quantity_needed": "5.25 count"
       }
     },
     {
       "ingredient": {
-        "name": "Great Value Heavy Whipping Cream",
-        "amount": 42,
-        "unit": "fl oz",
+        "name": "Heavy cream",
+        "amount": 2.625,
+        "unit": "cups",
         "category": "dairy",
         "notes": ""
       },
       "product": {
-        "name": "Great Value Heavy Whipping Cream, 16 oz Carton, Refrigerated",
-        "url": "https://www.walmart.com/ip/Great-Value-Heavy-Whipping-Cream-16-Fl-Oz/10450339?classType=REGULAR&athbdg=L1600&from=/search",
-        "price": "$337\ncurrent price $3.37\n21.1 \u00a2/fl oz",
-        "quantity_needed": "42 fl oz"
-      }
-    },
-    {
-      "ingredient": {
-        "name": "Morton Kosher Salt",
-        "amount": 0.88,
-        "unit": "Tbsp",
-        "category": "pantry",
-        "notes": "plus 2 tsp if using Diamond Crystal adjust as per recipe"
-      },
-      "product": {
         "name": "$",
-        "url": "URL not found",
-        "price": "$316\ncurrent price $3.16\n18.0 \u00a2/oz",
-        "quantity_needed": "0.88 Tbsp"
+        "url": "https://www.walmart.com/ip/Great-Value-Heavy-Whipping-Cream-16-Fl-Oz/10450339?classType=REGULAR&athbdg=L1200&from=/search",
+        "price": "$337\ncurrent price $3.37\n21.1 \u00a2/fl oz",
+        "quantity_needed": "2.625 cups"
       }
     },
     {
       "ingredient": {
-        "name": "McCormick Ground Black Pepper",
-        "amount": 1.75,
-        "unit": "tsp",
-        "category": "spices",
-        "notes": "freshly ground"
+        "name": "Kosher salt",
+        "amount": "1 Tbsp. plus 1.75 tsp.",
+        "unit": "",
+        "category": "pantry",
+        "notes": "Diamond Crystal or Morton brand preferred"
       },
       "product": {
-        "name": "McCormick Flavor Maker Mac & Cheese Topping Flavor Maker Seasoning, 4.1 oz Jar",
-        "url": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sb-search-top~desktop~&pos=2&tax=976759_976794&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FMcCormick-Flavor-Maker-Mac-Cheese-Topping-Seasoning-4-1-oz-Jar%2F5211338544%3FadsRedirect%3Dtrue&adUid=64093dd7-57a9-41de-9e0d-3758678a009c&mloc=sb-search-top&pltfm=desktop&pgId=McCormick%20Ground%20Black%20Pepper%20spice&pt=search&spQs=ZuuoNRbfjqk_GAdltjWFD6BfFJQ8vt6wLSaxnT8riU77nRvxqoI4Ntiop56Hgh9KA2E_Al9UXk9kbANGweKDsfGjzrlZ8grWQ8eR0GQCIUhXGcLDCR-ttfW_bZRtfIkaNCaIDivlp6T3IEIkpZXp5yOKXxvB51vNUtk-RrfCLY_n3r5d2jGh28aIg2JkPpALtEaUCwSkHcVoerf8664ZM8TMx6Y2fo7YLuilNe3qP9U&storeId=2636&couponState=na&bkt=ace1_default%7Cace2_default%7Cace3_default&/ip/McCormick-Flavor-Maker-Mac-Cheese-Topping-Seasoning-4-1-oz-Jar/5211338544",
-        "price": "$4.98\ncurrent price $4.98",
-        "quantity_needed": "1.75 tsp"
+        "name": "Morton Salt Coarse Kosher Salt \u2013 for Cooking, Grilling, Brining, & Salt Rimming, 16 oz",
+        "url": "URL not found",
+        "price": "$236\ncurrent price $2.36\n14.8 \u00a2/oz",
+        "quantity_needed": "1 Tbsp. plus 1.75 tsp. "
       }
     },
     {
       "ingredient": {
-        "name": "russet potatoes",
-        "amount": 43.75,
+        "name": "Freshly ground pepper",
+        "amount": 1.75,
+        "unit": "tsp.",
+        "category": "spices",
+        "notes": ""
+      },
+      "product": {
+        "name": "Watkins Gourmet Spice Tin, Pure Ground Black Pepper, 4 oz (Fish-Free)",
+        "url": "https://www.walmart.com/sp/track?bt=1&eventST=click&plmt=sb-search-top~desktop~&pos=2&tax=976759_976794&rdf=1&rd=https%3A%2F%2Fwww.walmart.com%2Fip%2FWatkins-Gourmet-Spice-Tin-Pure-Ground-Black-Pepper-4-oz-Fish-Free%2F11991461%3FadsRedirect%3Dtrue&adUid=266be9c7-5e30-4976-85fe-adb01c7e85b3&mloc=sb-search-top&pltfm=desktop&pgId=Freshly%20ground%20pepper%20spice&pt=search&spQs=2ykHSkXO2bbAcYmJPXf7WOpzNacY4lCHNuXnu6NCClAeG6ttHuVV7LUGjRjOD9jcjeCL1-5RaGZ5trmnnCff_yiKAyYDhOGrFaNfn-QhvOrEYX-33OlvlyAzB_U3cYwkUoz2KwgZjJB4FJPkENP7b4Nq-JTV4eHRcPfAVEQdzhm6XvlOBwFZWmm6Qx2Dl-wHvTafd7y98TWLD91ey8ZmCr1YrC11Jk-a2P0MyVkSS7k&storeId=2636&couponState=na&bkt=ace1_default%7Cace2_default%7Cace3_default&/ip/Watkins-Gourmet-Spice-Tin-Pure-Ground-Black-Pepper-4-oz-Fish-Free/11991461",
+        "price": "$4.26\ncurrent price $4.26",
+        "quantity_needed": "1.75 tsp."
+      }
+    },
+    {
+      "ingredient": {
+        "name": "Russet potatoes",
+        "amount": 4.375,
         "unit": "lb",
         "category": "produce",
-        "notes": "about 8.75 large, peeled and sliced"
+        "notes": "About 8.75 large potatoes"
       },
       "product": {
         "name": "Fresh Idaho Russet Potatoes, 5 lb Bag",
         "url": "https://www.walmart.com/ip/Fresh-Idaho-Potatoes-5-lb-Bag/10447839?classType=REGULAR&from=/search",
         "price": "$268\ncurrent price $2.68\n53.6 \u00a2/lb",
-        "quantity_needed": "43.75 lb"
+        "quantity_needed": "4.375 lb"
       }
     },
     {
       "ingredient": {
-        "name": "Great Value Sharp Yellow Cheddar Cheese",
-        "amount": 2.63,
+        "name": "Sharp yellow cheddar cheese, coarsely grated",
+        "amount": 2.625,
         "unit": "oz",
         "category": "dairy",
-        "notes": "coarsely grated, about 0.88 cup"
+        "notes": "About 0.875 cup"
       },
       "product": {
         "name": "$",
-        "url": "https://www.walmart.com/ip/Great-Value-Deli-Style-Sliced-Sharp-Cheddar-Cheese-8-oz-12-Slices/15077514?classType=REGULAR&athbdg=L1600&from=/search",
-        "price": "$224\ncurrent price $2.24\n28.0 \u00a2/oz",
-        "quantity_needed": "2.63 oz"
+        "url": "https://www.walmart.com/ip/Great-Value-Finely-Shredded-Sharp-Cheddar-Cheese-16-oz/10452477?classType=REGULAR&athbdg=L1600&from=/search",
+        "price": "$422\ncurrent price $4.22\n26.4 \u00a2/oz",
+        "quantity_needed": "2.625 oz"
       }
     },
     {
       "ingredient": {
-        "name": "Great Value All Natural Sour Cream",
-        "amount": 4.65,
-        "unit": "oz",
+        "name": "Sour cream",
+        "amount": 0.289,
+        "unit": "cup",
         "category": "dairy",
-        "notes": "\u2153 cup"
+        "notes": ""
       },
       "product": {
-        "name": "$",
-        "url": "https://www.walmart.com/ip/Great-Value-All-Natural-Sour-Cream-16-oz-Tub/12335111?classType=REGULAR&athbdg=L1600&from=/search",
-        "price": "$197\ncurrent price $1.97\n12.3 \u00a2/oz",
-        "quantity_needed": "4.65 oz"
+        "name": "Daisy Pure and Natural Sour Cream, 16 oz (1 lb) Tub (Refrigerated)",
+        "url": "https://www.walmart.com/ip/Daisy-Pure-and-Natural-Sour-Cream-16-oz-1-lb-Tub-Refrigerated/10309449?classType=REGULAR&athbdg=L1600&from=/search",
+        "price": "$264\ncurrent price $2.64\n16.5 \u00a2/oz",
+        "quantity_needed": "0.289 cup"
       }
     },
     {
       "ingredient": {
-        "name": "fresh scallions",
+        "name": "Scallions, dark green parts only, thinly sliced on a diagonal",
         "amount": 3.5,
         "unit": "count",
         "category": "produce",
-        "notes": "dark green parts only, thinly sliced on a diagonal"
+        "notes": ""
       },
       "product": {
         "name": "$",
-        "url": "https://www.walmart.com/ip/Divina-Cocktail-Onions/163747663?classType=REGULAR&from=/search",
-        "price": "$1495\ncurrent price $14.95",
+        "url": "https://www.walmart.com/ip/Woodland-Foods-533118-Dried-Scallions-16-Ounce-Box/1517538189?classType=REGULAR&from=/search",
+        "price": "$4300\ncurrent price $43.00",
         "quantity_needed": "3.5 count"
       }
     }

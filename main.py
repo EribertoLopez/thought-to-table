@@ -22,6 +22,8 @@ MODELID="gpt-4-turbo-preview"
 # TODO: When searching can we run query, return top 3-5 items and figure out which is the most relevant
 #   - we could use inference, but is expensive
 #   - 
+# TODO: shopping list has simplified terms while scaled ingredients have more complex terms 
+#   - join or fix so search has simpler terms that can be augmented based on infered category
 class RecipeAssistant:
     def __init__(self, num_meals: int):
         """
@@ -33,7 +35,7 @@ class RecipeAssistant:
         # Initialize Anthropic client with explicit API key
         self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
         self.servings_needed = num_meals
-        self.debug_walmart_search = True
+        self.debug_walmart_search = False
         self.driver = uc.Chrome()
         self.driver.maximize_window()
 
@@ -65,14 +67,14 @@ class RecipeAssistant:
                         "content": f"""Analyze this recipe and convert ingredients into Walmart-optimized shopping format.
 
                         For each ingredient provide:
-                        - name: Format specifically for Walmart grocery search (e.g., "fresh garlic bulb" instead of "garlic cloves", "dairy sour cream" instead of just "sour cream")
+                        - name: Use standard grocery shopping terms. Format specifically for Walmart grocery search (e.g., "garlic cloves" instead of "whole fresh garlic bulb", "sour cream" instead of just "dairy sour cream")
                         - amount: numerical quantity
                         - unit: Use common retail units:
-                        - For produce: "whole", "bunch", "head", "lb"
-                        - For dairy/liquid: "oz", "fl oz", "gallon"
-                        - For packaged goods: "oz", "lb", "count"
+                            - For produce: "whole", "bunch", "head", "lb"
+                            - For dairy/liquid: "oz", "fl oz", "gallon"
+                            - For packaged goods: "oz", "lb", "count"
                         - category: Specify one of: "produce", "dairy", "meat", "pantry", "spices"
-                        - notes: Include any specifics like "fresh", "organic", "pre-sliced"
+                        - notes: Include any specifics that do not fit in the other details
 
                         Consider common Walmart packaging and product names. Format ingredient names as you would find them on Walmart.com.
 
