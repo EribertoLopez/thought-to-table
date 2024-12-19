@@ -17,7 +17,11 @@ load_dotenv()
 CLAUDE_2_1='claude-3-haiku-20240307'
 # MODELID="gpt-3.5-turbo"
 MODELID="gpt-4-turbo-preview"
-
+# TODO: queries and item selection still arent great 
+# TODO: add query term to the debugging output
+# TODO: When searching can we run query, return top 3-5 items and figure out which is the most relevant
+#   - we could use inference, but is expensive
+#   - 
 class RecipeAssistant:
     def __init__(self, num_meals: int):
         """
@@ -29,6 +33,7 @@ class RecipeAssistant:
         # Initialize Anthropic client with explicit API key
         self.client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
         self.servings_needed = num_meals
+        self.debug_walmart_search = True
         self.driver = uc.Chrome()
         self.driver.maximize_window()
 
@@ -57,31 +62,33 @@ class RecipeAssistant:
                 messages=[
                     {
                         "role": "user",
-                        "content": f"""Analyze this recipe and provide the following information in JSON format:
-                        1. List of ingredients with:
-                        - name: this field should be optimized for walmart grocery searching
-                        - amount
-                        - unit
-                        - notes (e.g., "organic", "fresh", "canned")
-                        2. Number of servings this recipe makes
-                        3. Type of meal (breakfast, lunch, dinner)
-                        4. Portion size per serving
-                        5. Estimated calories per serving
-                        
-                        Format your response as a JSON object with these keys:
+                        "content": f"""Analyze this recipe and convert ingredients into Walmart-optimized shopping format.
+
+                        For each ingredient provide:
+                        - name: Format specifically for Walmart grocery search (e.g., "fresh garlic bulb" instead of "garlic cloves", "dairy sour cream" instead of just "sour cream")
+                        - amount: numerical quantity
+                        - unit: Use common retail units:
+                        - For produce: "whole", "bunch", "head", "lb"
+                        - For dairy/liquid: "oz", "fl oz", "gallon"
+                        - For packaged goods: "oz", "lb", "count"
+                        - category: Specify one of: "produce", "dairy", "meat", "pantry", "spices"
+                        - notes: Include any specifics like "fresh", "organic", "pre-sliced"
+
+                        Consider common Walmart packaging and product names. Format ingredient names as you would find them on Walmart.com.
+
+                        Format response as JSON with:
                         - ingredients: array of ingredient objects
                         - servings: number
                         - meal_type: string
-                        - portion_size: string
+                        - portion_size: string  
                         - calories_per_serving: number
-                        
+
                         Recipe text:
                         {recipe_text}"""
                     }
                 ],
                 response_format={ "type": "json_object" }
             )
-            
             return json.loads(response.choices[0].message.content)
         except Exception as e:
             print(f"Error parsing ingredients: {e}")
@@ -113,36 +120,43 @@ class RecipeAssistant:
         # First navigate to Walmart and wait for manual login
         # self.driver.get("https://www.walmart.com")
         # self.wait_for_manual_login()
-        
-        print("Extracting recipe text...")
-        recipe_text = self.extract_recipe_text(recipe_url)
+        if self.debug_walmart_search:
+            scaled_data = None
+            with open('shopping_list.json', 'r') as f:
+                data = json.loads(f.read())
+            print(data)
+            scaled_data = data['scaled_recipe']
+            recipe_text = data['original_recipe']
+        else:
+            print("Extracting recipe text...")
+            recipe_text = self.extract_recipe_text(recipe_url)
 
-        # print("\nOriginal Recipe Information:")
-        # print("\nShopping List:")
-        # for item in recipe_text['shopping_list']:
-        #     print(f"- {item}")
-        
-        print("Parsing ingredients with Claude...")
-        ingredients = self.parse_recipe_with_claude(recipe_text)
-        print(f"Found {len(ingredients)} ingredients")
-        
-        # Calculate total meals needed
-        print(f"\nScaling recipe for {self.servings_needed} meals...")
-        scaled_data = self.scale_recipe(ingredients)
-        print("\nScaled Recipe Information:")
-        print("\nShopping List:")
-        for item in scaled_data['shopping_list']:
-            print(f"- {item}")
+            # print("\nOriginal Recipe Information:")
+            # print("\nShopping List:")
+            # for item in recipe_text['shopping_list']:
+            #     print(f"- {item}")
+            
+            print("Parsing ingredients with Claude...")
+            ingredients = self.parse_recipe_with_claude(recipe_text)
+            print(f"Found {len(ingredients)} ingredients")
+            
+            # Calculate total meals needed
+            print(f"\nScaling recipe for {self.servings_needed} meals...")
+            scaled_data = self.scale_recipe(ingredients)
+            print("\nScaled Recipe Information:")
+            print("\nShopping List:")
+            for item in scaled_data['shopping_list']:
+                print(f"- {item}")
 
-        print("\nStorage Tips:")
-        for ingredient, tip in scaled_data['storage_tips'].items():
-            print(f"- {ingredient}: {tip}")
-        
-        print(f"\nEstimated Total Cost: ${scaled_data['estimated_cost']:.2f}")
+            print("\nStorage Tips:")
+            for ingredient, tip in scaled_data['storage_tips'].items():
+                print(f"- {ingredient}: {tip}")
+            
+            print(f"\nEstimated Total Cost: ${scaled_data['estimated_cost']:.2f}")
 
         print("\nSearching Walmart for ingredients...")
         shopping_results = []
-        
+
         for ingredient in scaled_data['scaled_ingredients']:
             print(f"Searching for {ingredient['name']}...")
             result = self.search_walmart_product(ingredient)
@@ -206,8 +220,37 @@ class RecipeAssistant:
     def search_walmart_product(self, ingredient: dict) -> dict:
         """Search for a single ingredient on Walmart.com and return product info."""
         try:
+            # Construct more specific search queries based on category
+            category = ingredient.get('category', '').lower()
+            name = ingredient['name']
+            unit = ingredient.get('unit', '')
+            notes = ingredient.get('notes', '')
+
+            if category == 'produce':
+                search_query = f"fresh {name}"
+            elif category == 'dairy':
+                search_query = f"dairy {name}"
+            elif category == 'meat':
+                search_query = f"fresh {name}"
+            elif category == 'spices':
+                search_query = f"{name} spice"
+            else:
+                search_query = name
+
+            # Add notes if they exist (like "organic")
+            # if notes:
+            #     search_query = f"{notes} {search_query}"
+
+            # Add department filter for more accurate results
+            # if category == 'produce':
+            #     url = f"https://www.walmart.com/browse/food/fresh-fruits-vegetables/{search_query}"
+            # elif category == 'dairy':
+            #     url = f"https://www.walmart.com/browse/food/dairy-eggs/{search_query}"
+            # else:
+            #     url = f"https://www.walmart.com/search?q={quote(search_query)}"
+
             # Construct search query
-            search_query = f"{ingredient['name']}"
+            # search_query = f"{ingredient['name']} {ingredient['unit']}"
             # search_query = f"{ingredient['amount']} {ingredient['unit']} {ingredient['name']}"
             encoded_query = quote(search_query)
             url = f"https://www.walmart.com/search?q={encoded_query}"
@@ -235,7 +278,7 @@ class RecipeAssistant:
                 for selector in name_selectors:
                     try:
                         product_name = product.find_element(By.CSS_SELECTOR, selector).text
-                        if product_name:
+                        if self.is_valid_product(product_name, ingredient):
                             break
                     except:
                         continue
@@ -317,6 +360,28 @@ class RecipeAssistant:
             json.dump(results, f, indent=2)
         print(f"\nResults saved to {filename}")
 
+    def is_valid_product(self, product_name: str, ingredient: dict) -> bool:
+        """Validate if the found product matches what we're looking for"""
+        category = ingredient.get('category', '').lower()
+        name = ingredient['name'].lower()
+        
+        # Reject if product name contains certain keywords
+        invalid_keywords = {
+            'produce': ['seeds', 'plant', 'garden', 'growing'],
+            'dairy': ['chips', 'snacks', 'artificial'],
+            'meat': ['pet', 'dog', 'cat', 'toy']
+        }
+        
+        # Check category-specific invalid keywords
+        if category in invalid_keywords:
+            if any(kw in product_name.lower() for kw in invalid_keywords[category]):
+                return False
+        
+        # Verify product name contains main ingredient name
+        if name not in product_name.lower():
+            return False
+            
+        return True
 # Example usage
 if __name__ == "__main__":
     assistant = RecipeAssistant(num_meals=7)
